@@ -1,0 +1,155 @@
+@use './globals/colors' as color;
+@use './util/mixin' as mx;
+@use './util/breakpoints' as bp;
+
+body{
+    @include mx.w-h (100%, 100vh);
+    @include mx.d-flex(row, center, center);
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    background-color: color.$gray-blue;
+    padding: 8rem;
+
+    @include bp.breakpoint(md) {
+        padding: 2rem;
+    }
+
+    @include bp.breakpoint(ms) {
+        padding: 3rem 0;
+    }
+}
+
+.grid {
+    @include mx.w-h(95%, auto);
+    margin: auto;
+    @include mx.d-grid(4, 1fr, auto);
+    grid-template-areas: 
+    'one one two three'
+    'four five five three';
+    gap: 3rem;
+
+    @include bp.breakpoint(md) {
+        @include mx.w-h(80%, auto);
+        gap: 1.5rem;
+    }
+
+    @include bp.breakpoint(ms){
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'one'
+        'two'
+        'four'
+        'five'
+        'three';
+    }
+}
+
+.card {
+    padding: 2rem 3.5rem;
+    color: color.$white;
+    border-radius: 8px;
+
+    @include bp.breakpoint(ms) {
+        padding: 2rem;
+    }
+
+    &:nth-child(1) {
+        grid-area: one;
+        background: map-get(color.$primary, p-violet );
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 20%;
+            content: '';
+            background: url(../images/bg-pattern-quotation.svg) no-repeat top right / auto;
+            @include mx.w-h(100%, 100%);
+            pointer-events: none;
+            opacity: .5;
+            z-index: 1;
+
+            @include bp.breakpoint(ms){
+                right: 10%;
+            }
+        }
+    }
+    &:nth-child(2) {
+        grid-area: two;
+        background: map-get(color.$primary, p-blue-1 );
+    }
+    &:nth-child(3) {
+        grid-area: three;
+        background: map-get(color.$primary, p-white );
+        color: color.$blue-1;
+        box-shadow: 0 0 5px color.$gray;
+    }
+    &:nth-child(4) {
+        grid-area: four;
+        background: map-get(color.$primary, p-white );
+        color: color.$blue-1;
+        box-shadow: 0 0 5px color.$gray;
+    }
+    &:nth-child(5) {
+        grid-area: five;
+        background: map-get(color.$primary, p-blue-2 );
+    }
+
+
+    &__header {
+        @include mx.d-flex(row, flex-start, center);
+    }
+
+    &__picture {
+        margin: 0;
+    }
+
+    &__img {
+        @include mx.w-h(40px, 40px);
+        border-radius: 50%;
+
+        &--b1 {
+            border: 2px solid rgba(color.$white, .5);
+        }
+
+        &--b2 {
+            border: 2px solid color.$violet;
+        }
+    }
+
+    &__person {
+        margin-left: 1rem;
+    }
+
+    &__name {
+        font-size: 1.5rem;
+        margin: 0;
+        margin-bottom: .5rem;
+    }
+
+    &__verified {
+        margin: 0;
+        opacity: .5;
+    }
+
+    &__info {
+
+        &-text {
+            font-size: 1.8rem;
+            margin: 1rem auto;
+        }
+    }
+
+    &__paragraph {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin: 0;
+        opacity: .7;
+    }
+
+}
+

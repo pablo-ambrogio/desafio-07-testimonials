@@ -1,0 +1,35 @@
+// ### Primary
+
+// Moderate violet: hsl(263, 55%, 52%)
+// Very dark grayish blue: hsl(217, 19%, 35%)
+// Very dark blackish blue: hsl(219, 29%, 14%)
+// White: hsl(0, 0%, 100%)
+
+// ### Neutral
+
+// Light gray: hsl(0, 0%, 81%)
+// Light grayish blue: hsl(210, 46%, 95%)
+
+// ### Primary
+
+$violet: #7541c8;
+$blue-1: #48556a;
+$blue-2: #19212e;
+$white: #ffffff;
+
+$primary: (
+    'p-violet': $violet,
+    'p-blue-1': $blue-1,
+    'p-blue-2': $blue-2,
+    'p-white': $white,
+);
+
+// ### Neutral
+
+$gray: #cfcfcf;
+$gray-blue: #ecf2f8;
+
+$neutral: (
+    'gray': $gray,
+    'gray-blue': $gray-blue,
+);

@@ -1,0 +1,22 @@
+// <!-- ## Typography
+
+// ### Body Copy
+
+// - Font size: 13px
+
+// ### Font
+
+// - Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+// - Weights: 500, 600 -->
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+$font: 'Barlow Semi Condensed', sans-serif;
+
+html {
+    font-size: 13px;
+}
+
+body {
+    font-family: $font;
+}
