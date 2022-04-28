@@ -33,11 +33,12 @@ body{
     gap: 3rem;
 
     @include bp.breakpoint(md) {
-        @include mx.w-h(80%, auto);
+        @include mx.w-h(100%, auto);
         gap: 1.5rem;
     }
 
     @include bp.breakpoint(ms){
+        @include mx.w-h(85%, auto);
         grid-template-columns: 1fr;
         grid-template-areas: 
         'one'

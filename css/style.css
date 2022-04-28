@@ -46,13 +46,15 @@ body {
 }
 @media screen and (max-width: 104.61em) {
   .grid {
-    width: 80%;
+    width: 100%;
     height: auto;
     gap: 1.5rem;
   }
 }
 @media screen and (max-width: 51.53em) {
   .grid {
+    width: 85%;
+    height: auto;
     grid-template-columns: 1fr;
     grid-template-areas: "one" "two" "four" "five" "three";
   }
